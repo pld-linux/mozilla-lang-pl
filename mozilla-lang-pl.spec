@@ -3,9 +3,9 @@ Summary(pl):	Polskie pliki jêzykowe dla Mozilli
 Name:		mozilla-lang-pl
 Version:	1.3
 # use "a", "b", or "%{nil}"
-%define	bver	b
+%define	bver	%{nil}
 %define	fver	%(echo %{bver} | sed -e 's/a/Alpha/;s/b/Beta/')
-Release:	0.%{bver}.1
+Release:	1
 License:        GPL
 Group:          X11/Applications/Networking
 Source0:	http://dl.sourceforge.net/mozillapl/Lang-PL-Build-ID-%{version}%{fver}.xpi
