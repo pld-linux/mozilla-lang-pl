@@ -16,9 +16,9 @@ Source1:	http://dl.sourceforge.net/mozillapl/Reg-PL-Build-ID-%{version}%{fver}.x
 Source2:	%{name}-installed-chrome.txt
 URL:            http://mozillapl.org/
 BuildRequires:	unzip
-Requires(post,postun):	mozilla = %{version}%{bver}
+Requires(post,postun):	mozilla = 4:%{version}%{bver}
 Requires(post,postun):	textutils
-Requires:	mozilla = %{version}%{bver}
+Requires:	mozilla = 4:%{version}%{bver}
 Obsoletes:	mozilla-Lang-PL
 BuildRoot:      %{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
