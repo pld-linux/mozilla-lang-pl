@@ -1,7 +1,7 @@
 Summary:	Polish resources for Mozilla
 Summary(pl):	Polskie pliki jêzykowe dla Mozilli
 Name:		mozilla-lang-pl
-Version:	1.5
+Version:	1.6
 # use "a", "b", or undefined
 #%%define	bver	b
 # use "Alpha", "Beta" or %{nil}
@@ -9,11 +9,9 @@ Version:	1.5
 Release:	%{?bver:0.%{bver}.}1
 License:	GPL
 Group:		X11/Applications/Networking
-Source0:	http://dl.sourceforge.net/mozillapl/Lang-PL-Build-ID-%{version}%{fver}.xpi
-# Source0-md5:	c911b3240debe7765405cfb0b2cffe93
-Source1:	http://dl.sourceforge.net/mozillapl/Reg-PL-Build-ID-%{version}%{fver}.xpi
-# Source1-md5:	3c1a37e34a5bdcd6512fb8f3ba9a6a14
-Source2:	%{name}-installed-chrome.txt
+Source0:	http://dl.sourceforge.net/mozillapl/mozilla-%{version}%{fver}-plPL-langpack.xpi
+# Source0-md5:	240da5bb374c45793990895c25887244
+Source1:	%{name}-installed-chrome.txt
 URL:		http://mozillapl.org/
 BuildRequires:	unzip
 Requires(post,postun):	mozilla = 5:%{version}%{?bver}
@@ -38,14 +36,13 @@ rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_bindir},%{_chromedir},%{_datadir}/mozilla/searchplugins}
 
 unzip %{SOURCE0} -d $RPM_BUILD_ROOT%{_libdir}
-unzip -n %{SOURCE1} -d $RPM_BUILD_ROOT%{_libdir}
 mv -f $RPM_BUILD_ROOT%{_libdir}/bin/chrome/* $RPM_BUILD_ROOT%{_chromedir}
 mv -f $RPM_BUILD_ROOT%{_libdir}/bin/searchplugins/* \
 	$RPM_BUILD_ROOT%{_datadir}/mozilla/searchplugins
 # entries already in mozilla
-rm -f $RPM_BUILD_ROOT%{_datadir}/mozilla/searchplugins/{Net,bug,dmoz,goo,lxr,moz}*
+rm -f $RPM_BUILD_ROOT%{_datadir}/mozilla/searchplugins/{Net,bug,dmoz,goo,jee,lxr,moz}*
 
-install %{SOURCE2} $RPM_BUILD_ROOT%{_chromedir}
+install %{SOURCE1} $RPM_BUILD_ROOT%{_chromedir}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
