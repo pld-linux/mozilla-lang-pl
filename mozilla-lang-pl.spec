@@ -3,22 +3,22 @@ Summary(pl):	Polskie pliki jêzykowe dla Mozilli
 Name:		mozilla-lang-pl
 Version:	1.5
 # use "a", "b", or undefined
-%define	bver	b
+#%%define	bver	b
 # use "Alpha", "Beta" or %{nil}
-%define	fver	Beta
+%define	fver	%{nil}
 Release:	%{?bver:0.%{bver}.}1
 License:	GPL
 Group:		X11/Applications/Networking
 Source0:	http://dl.sourceforge.net/mozillapl/Lang-PL-Build-ID-%{version}%{fver}.xpi
-# Source0-md5:	bbe5135e9ebee18bdd8a1bc6d11a89ae
+# Source0-md5:	c911b3240debe7765405cfb0b2cffe93
 Source1:	http://dl.sourceforge.net/mozillapl/Reg-PL-Build-ID-%{version}%{fver}.xpi
-# Source1-md5:	4b15770a14336c59b122031281dbdffc
+# Source1-md5:	3c1a37e34a5bdcd6512fb8f3ba9a6a14
 Source2:	%{name}-installed-chrome.txt
 URL:		http://mozillapl.org/
 BuildRequires:	unzip
-Requires(post,postun):	mozilla = 4:%{version}%{?bver}
+Requires(post,postun):	mozilla = 5:%{version}%{?bver}
 Requires(post,postun):	textutils
-Requires:	mozilla = 4:%{version}%{?bver}
+Requires:	mozilla = 5:%{version}%{?bver}
 Obsoletes:	mozilla-Lang-PL
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
