@@ -1,9 +1,9 @@
 Summary:	Polish resources for Mozilla
 Summary(pl):	Polskie pliki jêzykowe dla Mozilli
 Name:		mozilla-lang-pl
-Version:	1.3
+Version:	1.4
 # use "a", "b", or "%{nil}"
-%define	bver	%{nil}
+%define	bver	a
 %define	fver	%(echo %{bver} | sed -e 's/a/Alpha/;s/b/Beta/')
 Release:	1
 License:        GPL
