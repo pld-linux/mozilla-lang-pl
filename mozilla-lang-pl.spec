@@ -15,10 +15,10 @@ Source1:	%{name}-installed-chrome.txt
 URL:		http://mozillapl.org/
 BuildRequires:	unzip
 Requires(post,postun):	mozilla >= 5:%{version}%{?bver}
-Requires(post,postun):	mozilla <= 5:1.7.2%{?bver}
+Requires(post,postun):	mozilla <= 5:1.7.2
 Requires(post,postun):	textutils
-Requires:	mozilla => 5:%{version}%{?bver}
-Requires:	mozilla <= 5:1.7.2%{?bver}
+Requires:	mozilla >= 5:%{version}%{?bver}
+Requires:	mozilla <= 5:1.7.2
 Obsoletes:	mozilla-Lang-PL
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
