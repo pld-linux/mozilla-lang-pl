@@ -4,14 +4,14 @@ Name:		mozilla-lang-pl
 Version:	1.5
 # use "a", "b", or undefined
 %define	bver	b
-# use "Alpha", "Beta" or undefined
+# use "Alpha", "Beta" or %{nil}
 %define	fver	Beta
 Release:	%{?bver:0.%{bver}.}1
 License:	GPL
 Group:		X11/Applications/Networking
-Source0:	http://dl.sourceforge.net/mozillapl/Lang-PL-Build-ID-%{version}%{?fver}.xpi
+Source0:	http://dl.sourceforge.net/mozillapl/Lang-PL-Build-ID-%{version}%{fver}.xpi
 # Source0-md5:	bbe5135e9ebee18bdd8a1bc6d11a89ae
-Source1:	http://dl.sourceforge.net/mozillapl/Reg-PL-Build-ID-%{version}%{?fver}.xpi
+Source1:	http://dl.sourceforge.net/mozillapl/Reg-PL-Build-ID-%{version}%{fver}.xpi
 # Source1-md5:	4b15770a14336c59b122031281dbdffc
 Source2:	%{name}-installed-chrome.txt
 URL:		http://mozillapl.org/
