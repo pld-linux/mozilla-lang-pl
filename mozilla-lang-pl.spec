@@ -6,7 +6,7 @@ Version:	1.7
 #%%define	bver	b
 # use "Alpha", "Beta" or %{nil}
 %define	fver	%{nil}
-Release:	%{?bver:0.%{bver}.}2
+Release:	%{?bver:0.%{bver}.}3
 License:	GPL
 Group:		X11/Applications/Networking
 Source0:	http://ftp.mozilla.org/pub/mozilla.org/mozilla/l10n/lang/moz%{version}/langplpl.xpi
@@ -15,10 +15,10 @@ Source1:	%{name}-installed-chrome.txt
 URL:		http://mozillapl.org/
 BuildRequires:	unzip
 Requires(post,postun):	mozilla >= 5:%{version}%{?bver}
-Requires(post,postun):	mozilla <= 5:1.7.1%{?bver}
+Requires(post,postun):	mozilla <= 5:1.7.2%{?bver}
 Requires(post,postun):	textutils
 Requires:	mozilla => 5:%{version}%{?bver}
-Requires:	mozilla <= 5:1.7.1%{?bver}
+Requires:	mozilla <= 5:1.7.2%{?bver}
 Obsoletes:	mozilla-Lang-PL
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
