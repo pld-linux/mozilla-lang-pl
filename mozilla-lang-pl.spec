@@ -5,7 +5,8 @@ Version:	1.4
 # use "a", "b", or "%{nil}"
 %define	bver	a
 %define	fver	%(echo %{bver} | sed -e 's/a/Alpha/;s/b/Beta/')
-Release:	1
+Release:	0.%{bver}.1
+#Release:	1
 License:        GPL
 Group:          X11/Applications/Networking
 Source0:	http://dl.sourceforge.net/mozillapl/Lang-PL-Build-ID-%{version}%{fver}.xpi
