@@ -1,25 +1,24 @@
 Summary:	Polish resources for Mozilla
 Summary(pl):	Polskie pliki jêzykowe dla Mozilli
-Name:	mozilla-lang-pl
+Name:		mozilla-lang-pl
 Version:	1.5
-# use "a", "b", or "%{nil}"
+# use "a", "b", or undefined
 %define	bver	a
-# use "Alpha", "Beta" or "%{nil}"
+# use "Alpha", "Beta" or undefined
 %define	fver	Alpha
-#Release:	0.%{bver}.1
-Release:	1
+Release:	%{?bver:0.%{bver}.}1
 License:	GPL
 Group:		X11/Applications/Networking
-Source0:	http://dl.sourceforge.net/mozillapl/Lang-PL-Build-ID-%{version}%{fver}.xpi
+Source0:	http://dl.sourceforge.net/mozillapl/Lang-PL-Build-ID-%{version}%{?fver}.xpi
 # Source0-md5:	dca3a579da626991195d34dfff43babb
-Source1:	http://dl.sourceforge.net/mozillapl/Reg-PL-Build-ID-%{version}%{fver}.xpi
+Source1:	http://dl.sourceforge.net/mozillapl/Reg-PL-Build-ID-%{version}%{?fver}.xpi
 # Source1-md5:	e9b3ecf3127f1ce76fb64dbe5268741a
 Source2:	%{name}-installed-chrome.txt
 URL:		http://mozillapl.org/
 BuildRequires:	unzip
-Requires(post,postun):	mozilla = 4:%{version}%{bver}
+Requires(post,postun):	mozilla = 4:%{version}%{?bver}
 Requires(post,postun):	textutils
-Requires:	mozilla = 4:%{version}%{bver}
+Requires:	mozilla = 4:%{version}%{?bver}
 Obsoletes:	mozilla-Lang-PL
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
