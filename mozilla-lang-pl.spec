@@ -3,7 +3,7 @@ Summary(pl):	Polskie pliki jêzykowe dla Mozilli
 Name:		mozilla-lang-pl
 Version:	1.4
 # use "a", "b", or "%{nil}"
-%define	bver	a
+%define	bver	b
 %define	fver	%(echo %{bver} | sed -e 's/a/Alpha/;s/b/Beta/')
 Release:	0.%{bver}.1
 #Release:	1
