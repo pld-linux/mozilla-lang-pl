@@ -21,6 +21,7 @@ Requires(post,postun):	textutils
 Requires:	mozilla >= 5:%{version}%{?bver}
 Requires:	mozilla <= 5:%{version}
 Obsoletes:	mozilla-Lang-PL
+BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 # %{_libdir}/mozilla/chrome is symlink pointing to the following
@@ -38,9 +39,9 @@ Polskie pliki jêzykowe dla Mozilli.
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_bindir},%{_chromedir},%{_datadir}/mozilla/searchplugins}
 
-unzip %{SOURCE0} -d $RPM_BUILD_ROOT%{_libdir}
-mv -f $RPM_BUILD_ROOT%{_libdir}/bin/chrome/* $RPM_BUILD_ROOT%{_chromedir}
-mv -f $RPM_BUILD_ROOT%{_libdir}/bin/searchplugins/* \
+unzip %{SOURCE0} -d $RPM_BUILD_ROOT%{_datadir}
+mv -f $RPM_BUILD_ROOT%{_datadir}/bin/chrome/* $RPM_BUILD_ROOT%{_chromedir}
+mv -f $RPM_BUILD_ROOT%{_datadir}/bin/searchplugins/* \
 	$RPM_BUILD_ROOT%{_datadir}/mozilla/searchplugins
 # entries already in mozilla
 rm -f $RPM_BUILD_ROOT%{_datadir}/mozilla/searchplugins/{Net,bug,dmoz,goo,jee,lxr,moz}*
