@@ -1,7 +1,8 @@
 Summary:	Polish resources for Mozilla
 Summary(pl):	Polskie pliki jêzykowe dla Mozilli
 Name:		mozilla-lang-pl
-Version:	1.6
+Version:	1.7.6
+%define		shortversion	1.76
 # use "a", "b", or undefined
 #%%define	bver	b
 # use "Alpha", "Beta" or %{nil}
@@ -9,15 +10,18 @@ Version:	1.6
 Release:	%{?bver:0.%{bver}.}1
 License:	GPL
 Group:		X11/Applications/Networking
-Source0:	http://dl.sourceforge.net/mozillapl/mozilla-%{version}%{fver}-plPL-langpack.xpi
-# Source0-md5:	240da5bb374c45793990895c25887244
+Source0:	http://ftp.mozilla.org/pub/mozilla.org/mozilla/l10n/lang/moz%{shortversion}/mozilla-%{version}.pl-PL.langpack.xpi
+# Source0-md5:	c48569b9183a48f66673b99df20f1c59
 Source1:	%{name}-installed-chrome.txt
 URL:		http://mozillapl.org/
 BuildRequires:	unzip
-Requires(post,postun):	mozilla = 5:%{version}%{?bver}
+Requires(post,postun):	mozilla >= 5:%{version}%{?bver}
+Requires(post,postun):	mozilla <= 5:%{version}
 Requires(post,postun):	textutils
-Requires:	mozilla = 5:%{version}%{?bver}
+Requires:	mozilla >= 5:%{version}%{?bver}
+Requires:	mozilla <= 5:%{version}
 Obsoletes:	mozilla-Lang-PL
+BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 # %{_libdir}/mozilla/chrome is symlink pointing to the following
@@ -35,9 +39,9 @@ Polskie pliki jêzykowe dla Mozilli.
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_bindir},%{_chromedir},%{_datadir}/mozilla/searchplugins}
 
-unzip %{SOURCE0} -d $RPM_BUILD_ROOT%{_libdir}
-mv -f $RPM_BUILD_ROOT%{_libdir}/bin/chrome/* $RPM_BUILD_ROOT%{_chromedir}
-mv -f $RPM_BUILD_ROOT%{_libdir}/bin/searchplugins/* \
+unzip %{SOURCE0} -d $RPM_BUILD_ROOT%{_datadir}
+mv -f $RPM_BUILD_ROOT%{_datadir}/bin/chrome/* $RPM_BUILD_ROOT%{_chromedir}
+mv -f $RPM_BUILD_ROOT%{_datadir}/bin/searchplugins/* \
 	$RPM_BUILD_ROOT%{_datadir}/mozilla/searchplugins
 # entries already in mozilla
 rm -f $RPM_BUILD_ROOT%{_datadir}/mozilla/searchplugins/{Net,bug,dmoz,goo,jee,lxr,moz}*
