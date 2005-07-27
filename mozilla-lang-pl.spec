@@ -1,8 +1,8 @@
 Summary:	Polish resources for Mozilla
 Summary(pl):	Polskie pliki jêzykowe dla Mozilli
 Name:		mozilla-lang-pl
-Version:	1.7.8
-%define		shortversion	1.78
+Version:	1.7.10
+%define		shortversion	1.710
 # use "a", "b", or undefined
 #%%define	bver	b
 # use "Alpha", "Beta" or %{nil}
@@ -11,7 +11,7 @@ Release:	%{?bver:0.%{bver}.}1
 License:	GPL
 Group:		X11/Applications/Networking
 Source0:	http://ftp.mozilla.org/pub/mozilla.org/mozilla/l10n/lang/moz%{shortversion}/mozilla-%{version}.pl-PL.langpack.xpi
-# Source0-md5:	a2d9c9f796d864e9e6da0c0347b2e5ed
+# Source0-md5:	ac6c65a451262e89c6afcc389fc13fc5
 Source1:	%{name}-installed-chrome.txt
 URL:		http://mozillapl.org/
 BuildRequires:	unzip
