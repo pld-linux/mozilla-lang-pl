@@ -2,12 +2,13 @@ Summary:	Polish resources for Mozilla
 Summary(pl):	Polskie pliki jêzykowe dla Mozilli
 Name:		mozilla-lang-pl
 Version:	1.7.12
+%define		mozversion	1.7.13
 %define		shortversion	1.712
 # use "a", "b", or undefined
 #%%define	bver	b
 # use "Alpha", "Beta" or %{nil}
 %define	fver	%{nil}
-Release:	%{?bver:0.%{bver}.}1
+Release:	%{?bver:0.%{bver}.}2
 License:	GPL
 Group:		X11/Applications/Networking
 Source0:	http://ftp.mozilla.org/pub/mozilla.org/mozilla/l10n/lang/moz%{shortversion}/mozilla-%{version}.pl-PL.langpack.xpi
@@ -15,11 +16,11 @@ Source0:	http://ftp.mozilla.org/pub/mozilla.org/mozilla/l10n/lang/moz%{shortvers
 Source1:	%{name}-installed-chrome.txt
 URL:		http://mozillapl.org/
 BuildRequires:	unzip
-Requires(post,postun):	mozilla >= 5:%{version}%{?bver}
-Requires(post,postun):	mozilla <= 5:%{version}
+Requires(post,postun):	mozilla >= 5:%{mozversion}%{?bver}
+Requires(post,postun):	mozilla <= 5:%{mozversion}
 Requires(post,postun):	textutils
-Requires:	mozilla >= 5:%{version}%{?bver}
-Requires:	mozilla <= 5:%{version}
+Requires:	mozilla >= 5:%{mozversion}%{?bver}
+Requires:	mozilla <= 5:%{mozversion}
 Obsoletes:	mozilla-Lang-PL
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
