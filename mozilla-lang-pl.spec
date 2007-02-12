@@ -1,5 +1,5 @@
 Summary:	Polish resources for Mozilla
-Summary(pl):	Polskie pliki jêzykowe dla Mozilli
+Summary(pl.UTF-8):   Polskie pliki jÄ™zykowe dla Mozilli
 Name:		mozilla-lang-pl
 Version:	1.7.12
 %define		mozversion	1.7.13
@@ -31,8 +31,8 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 Polish resources for Mozilla.
 
-%description -l pl
-Polskie pliki jêzykowe dla Mozilli.
+%description -l pl.UTF-8
+Polskie pliki jÄ™zykowe dla Mozilli.
 
 %prep
 
