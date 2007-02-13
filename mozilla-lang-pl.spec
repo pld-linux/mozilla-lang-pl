@@ -1,5 +1,5 @@
 Summary:	Polish resources for Mozilla
-Summary(pl.UTF-8):   Polskie pliki językowe dla Mozilli
+Summary(pl.UTF-8):	Polskie pliki językowe dla Mozilli
 Name:		mozilla-lang-pl
 Version:	1.7.12
 %define		mozversion	1.7.13
